@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from "react";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -34,32 +33,98 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={handleLogin}>
-        <h2 className="text-xl font-semibold mb-4">Login</h2>
-        {error && <p className="text-red-500">{error}</p>}
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 border rounded mb-2"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 border rounded mb-2"
-          required
-        />
-        <button type="submit" className="bg-blue-500 text-white w-full p-2 rounded">
-          Login
-        </button>
-      </form>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        width: "100vw", // Ensures full screen width
+        background: "linear-gradient(rgb(152, 57, 135), rgb(43, 2, 25))",
+        position: "absolute", // Covers entire screen
+        top: 0,
+        left: 0,
+      }}
+    >
+      <div
+        style={{
+          width: "400px",
+          background: "black",
+          color: "white",
+          padding: "30px",
+          borderRadius: "10px",
+          boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)",
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h2>Login - SmartCrack AI</h2>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <form onSubmit={handleLogin} style={{ width: "100%" }}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{
+              width: "90%",
+              padding: "12px",
+              margin: "10px 0",
+              border: "1px solid #555",
+              borderRadius: "5px",
+              background: "#222",
+              color: "white",
+              fontSize: "16px",
+              textAlign: "center",
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{
+              width: "90%",
+              padding: "12px",
+              margin: "10px 0",
+              border: "1px solid #555",
+              borderRadius: "5px",
+              background: "#222",
+              color: "white",
+              fontSize: "16px",
+              textAlign: "center",
+            }}
+          />
+          <button
+            type="submit"
+            style={{
+              width: "95%",
+              padding: "12px",
+              backgroundColor: "#007bff",
+              color: "white",
+              border: "none",
+              borderRadius: "5px",
+              cursor: "pointer",
+              fontSize: "16px",
+              marginTop: "10px",
+              transition: "0.3s",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#0056b3")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#007bff")}
+          >
+            Login
+          </button>
+        </form>
+        <p style={{ marginTop: "15px", fontSize: "14px" }}>
+          Don't have an account? <a href="/signup" style={{ color: "#00bfff", textDecoration: "none" }}>Sign Up</a>
+        </p>
+      </div>
     </div>
   );
-}
+};
 
-export default LoginPage
+export default LoginPage;
