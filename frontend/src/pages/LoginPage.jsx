@@ -120,7 +120,7 @@ const LoginPage = () => {
           </button>
         </form>
         <p style={{ marginTop: "15px", fontSize: "14px" }}>
-          Don't have an account? <a href="/signup" style={{ color: "#00bfff", textDecoration: "none" }}>Sign Up</a>
+          Don't have an account? <a href="/SignupPage" style={{ color: "#00bfff", textDecoration: "none" }}>Sign Up</a>
         </p>
       </div>
     </div>
