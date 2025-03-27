@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import { useState } from 'react'
 
 const LoginPage = () => {
@@ -55,6 +55,72 @@ const LoginPage = () => {
           required
         />
         <button type="submit" className="bg-blue-500 text-white w-full p-2 rounded">
+          Login
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default LoginPage
+*/
+
+import React from 'react'
+import { useState } from 'react'
+
+const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError(""); // Clear previous errors
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", // Include cookies
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed");
+      }
+
+      alert("Login successful!");
+      window.location.href = "/"; // Redirect after login
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <div >
+      <form  onSubmit={handleLogin}>
+        <h2 >Login</h2>
+        {error && <p >{error}</p>}
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+           required
+        />
+        <button type="submit" >
           Login
         </button>
       </form>
