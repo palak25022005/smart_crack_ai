@@ -10,59 +10,57 @@ const AITutor = () => {
         /* Full Page Background */
         body, html {
           height: 100%;
-          background: linear-gradient(to bottom, #2e005b, #4b0082);
+          background: linear-gradient(to bottom,rgb(101, 38, 148),  rgb(33, 4, 54));
           margin: 0;
-          font-family: Arial, sans-serif;
-        }
-
-        .ai-tutor-container {
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          font-family: Arial, sans-serif; 
           color: white;
-          padding: 20px;
         }
-
         /* Navbar */
-        .navbar {
+            .navbar {
           display: flex;
-          justify-content: center;
-          gap: 15px;
+          justify-content: space-around; /* Spread evenly */
           background-color: #23004d;
-          padding: 15px;
+          padding: 20px;
           width: 100%;
-          border-radius: 10px;
           position: fixed;
           top: 0;
           left: 0;
-        }
+          z-index: 100;
+      }
 
         .nav-button {
-          background: linear-gradient(to right, #6a0dad, #4b0082);
-          color: white;
-          padding: 10px 20px;
-          border-radius: 20px;
-          border: none;
-          cursor: pointer;
-          font-weight: bold;
-        }
+    background: linear-gradient(to right, #6a0dad, #4b0082);
+    color: white;
+    padding: 15px 30px; /* Increased padding */
+    border-radius: 10px; /* Slightly rounded */
+      border: 1px solid white;
+  border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem; /* Slightly larger text */
+    transition: 0.3s;
+  }
 
+       .nav-button:hover {
+    background: #2e005b;
+    transform: scale(1.05);
+  }
+        .nav-button.active {
+          background: #2e005b;
+        }
         /* AI Tutor Section */
         .ai-tutor-title {
           font-size: 28px;
           font-weight: bold;
-          margin-top: 80px;
+          margin-top:80px;
         }
 
         .chat-container {
           background: white;
           color: black;
-          width: 80%;
-          max-width: 600px;
-          padding: 20px;
-          border-radius: 20px;
+          width: 800px;
+          padding: 40px;
+          border-radius: 40px;
           text-align: center;
           font-weight: bold;
           display: flex;
@@ -75,8 +73,8 @@ const AITutor = () => {
         .chat-box {
           width: 100%;
           height: 300px;
-          background-color: #f9f9f9;
-          border-radius: 10px;
+          background-color:rgb(241, 239, 239);
+          border-radius: 20px;
           padding: 10px;
           overflow-y: auto;
           margin-bottom: 10px;
@@ -106,7 +104,6 @@ const AITutor = () => {
         }
       `}</style>
 
-      <div className="ai-tutor-container">
         {/* Navbar */}
         <div className="navbar">
           <button className="nav-button" onClick={() => navigate("/")}>Home</button>
@@ -127,7 +124,7 @@ const AITutor = () => {
           <input type="text" className="input-box" placeholder="Ask AI Tutor..." />
           <button className="send-button">Send</button>
         </div>
-      </div>
+      
     </>
   );
 };
