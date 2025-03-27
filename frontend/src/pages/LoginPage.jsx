@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // Use navigate for redirection
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError(""); // Clear previous errors
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("http://localhost:5001/api/auth/login", {  
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,7 +28,7 @@ const LoginPage = () => {
       }
 
       alert("Login successful!");
-      window.location.href = "/"; // Redirect after login
+      navigate("/dashboard"); // Redirect to Dashboard after login
     } catch (err) {
       setError(err.message);
     }
@@ -39,9 +41,9 @@ const LoginPage = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
-        width: "100vw", // Ensures full screen width
+        width: "100vw",
         background: "linear-gradient(rgb(152, 57, 135), rgb(43, 2, 25))",
-        position: "absolute", // Covers entire screen
+        position: "absolute",
         top: 0,
         left: 0,
       }}
