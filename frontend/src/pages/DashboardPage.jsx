@@ -125,7 +125,7 @@ const DashboardPage = () => {
         {/* Navbar */}
         <div className="navbar">
           <button className="nav-button active" onClick={() => navigate("/")}>SmartCrack AI</button>
-          <button className="nav-button" onClick={() => navigate("/Dashboard")}>StudentDashboard</button>
+          <button className="nav-button" >StudentDashboard</button>
           <button className="nav-button" onClick={() => navigate("/LearnPage")}>Learn</button>
           <button className="nav-button" onClick={() => navigate("/AITutor")}>AiTutor</button>
           <button className="nav-button" onClick={() => navigate("/QuizSelectionPage")}>AiQuiz</button>
@@ -144,22 +144,22 @@ const DashboardPage = () => {
         {/* Feature Cards */}
         <div className="cards-container">
           <div className="card" onClick={() => navigate("/LearnPage")}>
-            <img src=".\public\IMG-20250327-WA0022.jpg" alt="" />
+            
             Continue Learning
           </div>
 
           <div className="card" onClick={() => navigate("/AITutor")}>
-            <img src=".\public\IMG-20250327-WA0022.jpg" alt="AI Tutor" />
+            
             Ask AI Tutor
           </div>
 
           <div className="card" onClick={() => navigate("/QuizSelectionPage")}>
-            <img src=".\public\IMG-20250327-WA0022.jpg" alt="Quiz" />
+            
             AI Quiz
           </div>
           
           <div className="card" onClick={() => navigate("/TextToAudioPage")}>
-            <img src=".\public\assets\IMG-20250327-WA0023.jpg" alt="" />
+            
             Text to Audio Summarization
           </div>
         </div>
