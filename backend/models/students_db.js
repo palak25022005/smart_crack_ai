@@ -4,7 +4,9 @@ const studentSchema=new mongoose.Schema({
     firstVisit: { type: Boolean, default: true },
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },   
+    password: { type: 
+        
+        String, required: true },   
 
 name:{
     type:String,
@@ -15,10 +17,7 @@ studentClass:{
     required:true
 },
 
-exam:{
-    type:String,
-    required:true
-}
+exam: { type: String, enum: ["JEE", "NEET"], required: true },
 });
 
 // Hash password before saving
