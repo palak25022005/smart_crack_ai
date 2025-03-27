@@ -38,13 +38,10 @@ function App() {
       .catch(() => setIsAuthenticated(false));
   }, []);
 
-  const hideNavBar = 
-    !isAuthenticated && (location.pathname === "/" || location.pathname === "/LandingPage") || 
-    location.pathname === "/LoginPage" || 
-    location.pathname === "/SignupPage";
+  
   return (
     <div>
-      {!hideNavBar && <NavBar />}
+      
 
 
       <Routes>
