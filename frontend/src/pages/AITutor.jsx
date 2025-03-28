@@ -57,6 +57,7 @@ const AITutor = () => {
 
         .chat-container {
           background: white;
+          align: center;
           color: black;
           width: 800px;
           padding: 40px;
