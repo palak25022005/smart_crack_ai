@@ -1,85 +1,3 @@
-/*import React from 'react'
-import { useState } from 'react'
-import { useNavigate } from "react-router-dom";
-
-const SignupPage = () => {
-
-  const navigate = useNavigate(); // ✅ Initialize navigate
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    name: "",
-    studentClass: "",
-    exam: "",
-  });
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-        credentials: "include",
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Registration failed");
-      }
-
-      alert("Registration successful!");
-
-      localStorage.setItem("isAuthenticated", "true");
-      // Redirect to dashboard after successful signup
-      navigate("/");
-
-      // Reload to fetch authentication state
-      window.location.reload();
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  return (
-    <div className="flex items-center justify-center h-screen">
-      <form className="bg-white p-6 rounded-lg shadow-md" onSubmit={handleRegister}>
-        <h2 className="text-xl font-semibold mb-4">Register</h2>
-        {error && <p className="text-red-500">{error}</p>}
-        {Object.keys(formData).map((field) => (
-          <input
-            key={field}
-            type={field === "password" ? "password" : "text"}
-            name={field}
-            placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-            value={formData[field]}
-            onChange={handleChange}
-            className="w-full p-2 border rounded mb-2"
-            required
-          />
-        ))}
-        <button type="submit" className="bg-green-500 text-white w-full p-2 rounded">
-          Register
-        </button>
-      </form>
-    </div>
-  );
-}
-
-export default SignupPage
-*/
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactDOM from "react-dom/client";
@@ -87,12 +5,12 @@ import ReactDOM from "react-dom/client";
 const SignupPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: "",
     username: "",
     email: "",
     password: "",
-    jeeNeet: "",
-    grade: "",
+    name: "",
+    exam: "",
+    studentClass: "",
   });
   const [error, setError] = useState("");
 
@@ -162,17 +80,8 @@ const SignupPage = () => {
         <form onSubmit={handleRegister} style={{ width: "100%" }}>
           <input
             type="text"
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            style={inputStyle}
-          />
-          <input
-            type="text"
             name="username"
-            placeholder="Username"
+            placeholder="username"
             value={formData.username}
             onChange={handleChange}
             required
@@ -181,7 +90,7 @@ const SignupPage = () => {
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -190,18 +99,27 @@ const SignupPage = () => {
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="password"
             value={formData.password}
             onChange={handleChange}
             required
             style={inputStyle}
           />
-          <select name="jeeNeet" value={formData.jeeNeet} onChange={handleChange} required style={inputStyle}>
+          <input
+            type="text"
+            name="name"
+            placeholder="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <select name="exam" value={formData.exam} onChange={handleChange} required style={inputStyle}>
             <option value="">Select Exam</option>
             <option value="JEE">JEE</option>
             <option value="NEET">NEET</option>
           </select>
-          <select name="grade" value={formData.grade} onChange={handleChange} required style={inputStyle}>
+          <select name="studentClass" value={formData.studentClass} onChange={handleChange} required style={inputStyle}>
             <option value="">Select Grade</option>
             <option value="11">11th</option>
             <option value="12">12th</option>
@@ -251,3 +169,4 @@ const buttonStyle = {
 };
 
 export default SignupPage;
+
