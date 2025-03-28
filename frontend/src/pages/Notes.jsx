@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const initialNotes = [
   {
@@ -21,12 +22,52 @@ const initialNotes = [
     content:
       "Average acceleration: Defined as the rate of change of velocity over a given interval. Measured in m/s².",
   },
+  {
+    id: 5,
+    content:
+      "Uniform velocity: A particle with uniform velocity undergoes equal displacements in equal intervals of time however small the intervals may be.",
+  },
+  {
+    id: 6,
+    content:
+      "Uniform acceleration: A particle with uniform acceleration undergoes equal changes in velocity in equal intervals of time, however small the intervals may be.",
+  },
+  {
+    id: 7,
+    content:
+      "Characteristics of v-t graph: The velocity of an object is its speed in a particular direction. Two cars travelling at the same speed but in opposite directions have different velocities.",
+  },
+  {
+    id: 8,
+    content:
+      "A velocity-time graph shows the speed and direction an object travels over a specific period of time. Velocity-time graphs are also called speed-time graphs.",
+  },
+  {
+    id: 9,
+    content:
+      "When an object is moving with a constant velocity, the line on the graph is horizontal. When the horizontal line is at zero velocity, the object is at rest. When an object is undergoing constant acceleration, the line on the graph is straight but sloped.",
+  },
+  {
+    id: 10,
+    content:
+      "Curved lines on velocity-time graphs also show changes in velocity, but not with a constant acceleration or deceleration. The diagram shows some typical lines on a velocity-time graph.",
+  },
 ];
-
 const Notes = () => {
   const [notes, setNotes] = useState(initialNotes);
   const [selectionText, setSelectionText] = useState("");
   const [activeNoteIndex, setActiveNoteIndex] = useState(null);
+
+  // Added variables for sidebar functionality
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedSubject, setSelectedSubject] = useState(null);
+  const lessons = {
+    Physics: ["Kinematics", "Laws of Motion", "Thermodynamics"],
+    Chemistry: ["Organic Chemistry", "Periodic Table", "Chemical Reactions"],
+    Maths: ["Algebra", "Calculus", "Geometry"],
+  };
+
+  const navigate = useNavigate();
 
   // When mouse up occurs inside a note, record the selection and the note index
   const handleMouseUp = (e) => {
@@ -84,6 +125,39 @@ const Notes = () => {
           Highlight Selection
         </button>
       )}
+
+      <div className="sidebar">
+        <h2>Subjects</h2>
+        <div className="dropdown">
+          <button
+            className="dropdown-button"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          >
+            Select Subject ▼
+          </button>
+          <ul className="dropdown-menu">
+            {Object.keys(lessons).map((subject) => (
+              <li key={subject} onClick={() => setSelectedSubject(subject)}>
+                {subject}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {selectedSubject && (
+          <ul className="lessons-list">
+            {lessons[selectedSubject].map((lesson, index) => (
+              <button
+                key={index}
+                className="lesson-button"
+                onClick={() => navigate(`/lesson/${lesson}`)}
+              >
+                {lesson}
+              </button>
+            ))}
+          </ul>
+        )}
+      </div>
+
       <style>{`
         html, body, #root {
           height: 100%;
@@ -98,7 +172,7 @@ const Notes = () => {
           color: white;
           padding: 20px;
           border-radius: 15px;
-          margin-left: 300px;
+          margin-left: 450px;
           max-width: 800px;
           height: auto;
           text-align: center;
@@ -141,6 +215,69 @@ const Notes = () => {
         
         .highlight-button:hover {
           background: #4b0082;
+        }
+
+        .sidebar {
+          width: 250px;
+          background: linear-gradient(rgb(97, 36, 159), rgb(18, 1, 30));
+          color: white;
+          height: 100vh;
+          padding: 20px;
+          position: fixed;
+          left: 0;
+          top: 0;
+        }
+
+        .sidebar h2 {
+          text-align: center;
+        }
+
+        .dropdown {
+          margin-top: 20px;
+        }
+
+        .dropdown-button {
+          background: rgb(0, 0, 0);
+          color: white;
+          padding: 10px;
+          width: 100%;
+          border: none;
+          cursor: pointer;
+          text-align: left;
+        }
+
+        .dropdown-menu {
+          display: ${isDropdownOpen ? "block" : "none"};
+          background: black;
+          color: white;
+          list-style: none;
+          padding: 10px;
+          border-radius: 5px;
+          margin-top: 5px;
+        }
+
+        .dropdown-menu li {
+          padding: 5px;
+          cursor: pointer;
+        }
+
+        .dropdown-menu li:hover {
+          background: #ddd;
+        }
+
+        .lesson-button {
+          background: black;
+          color: white;
+          padding: 10px;
+          width: 100%;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+          margin-bottom: 5px;
+        }
+
+        .lesson-button:hover {
+          background: #ddd;
         }
       `}</style>
     </div>
