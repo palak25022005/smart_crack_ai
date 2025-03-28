@@ -21,6 +21,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                    subtopics: [
                   { "name": "Physics, Technology, and Society" },
                   { "name": "SI Units" },
@@ -35,6 +36,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics: [
                   { "name": "Motion in 1D" },
                   { "name": "The Frame of Reference" },
@@ -64,6 +66,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics: [
                   { "name": "Force and Inertia" },
                   { "name": "Newtons First Law of Motion" },
@@ -86,6 +89,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics: [
                   { "name": "Work Done by a Constant Force and a Variable Force" },
                   { "name": "Kinetic and Potential Energies" },
@@ -104,6 +108,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopic: [
                 { "name": "Sets and Their Representation" },
                 { "name": "Union, Intersection, and Complement of Sets and Their Algebraic Properties" },
@@ -121,6 +126,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopics:
               [
                 { "name": "Complex Numbers as Ordered Pairs of Reals" },
@@ -139,6 +145,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Matrices: Algebra of Matrices" },
@@ -158,6 +165,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
               subtopics:
               [
                 { "name": "The Fundamental Principle of Counting" },
@@ -175,6 +183,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopic: [
                 { "name": "Matter and Its Nature" },
                 { "name": "Daltons Atomic Theory" },
@@ -198,6 +207,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Classification of Matter into Solid, Liquid, and Gaseous States" },
@@ -230,6 +240,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Thomson and Rutherford Atomic Models and Their Limitations" },
@@ -260,6 +271,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Kossel  Lewis Approach to Chemical Bond Formation" },
@@ -296,6 +308,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopic: [
                   { "name": "Electric Charges: Conservation of Charge" },
                   { "name": "Coulombs Law - Forces Between Two Point Charges" },
@@ -329,6 +342,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics:
                   [
                     { "name": "Electric Current" },
@@ -356,6 +370,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Biot  Savart Law and Its Application to Current Carrying Circular Loop" },
@@ -383,6 +398,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Electromagnetic Induction: Faradays Law" },
@@ -408,6 +424,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopic:[
                     { "name": "Types of Relations: Reflexive, Symmetric, Transitive, and Equivalence" },
                     { "name": "Functions: One-One, Onto, and Inverse" },
@@ -419,6 +436,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
               subtopics:
               [
                 { "name": "Domains and Ranges of Inverse Trigonometric Functions" },
@@ -432,6 +450,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
            subtopics:
            [
             { "name": "Types of Matrices (Square, Diagonal, Symmetric, Skew-Symmetric, Identity)" },
@@ -447,6 +466,7 @@ async function assignExamSyllabus(studentId) {
           weakpoints:[],
           coveredpoints:[],
           youtubeURL:[],
+          No_of_Q:[],
       subtopics:
       [
         { "name": "Continuity of a Function at a Point and in an Interval" },
@@ -466,6 +486,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopic:[
                 { "name": "Different Methods for Expressing the Concentration of a Solution: Molality, Molarity, Mole Fraction, Percentage (by Volume and Mass Both)" },
                 { "name": "Vapour Pressure of Solutions and Raoult’s Law" },
@@ -481,6 +502,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Modes of Occurrence of Elements in Nature: Minerals and Ores" },
@@ -494,6 +516,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Group 13 to Group 18 Elements: General Introduction, Electronic Configuration, and General Trends in Physical and Chemical Properties" },
@@ -522,6 +545,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Transition Elements: General Introduction, Electronic Configuration, Occurrence, and Characteristics" },
@@ -555,6 +579,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                    subtopics: [
                   { "name": "Physics, Technology, and Society" },
                   { "name": "SI Units" },
@@ -569,6 +594,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics: [
                   { "name": "Motion in 1D" },
                   { "name": "The Frame of Reference" },
@@ -598,6 +624,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics: [
                   { "name": "Force and Inertia" },
                   { "name": "Newtons First Law of Motion" },
@@ -620,6 +647,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics: [
                   { "name": "Work Done by a Constant Force and a Variable Force" },
                   { "name": "Kinetic and Potential Energies" },
@@ -638,6 +666,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopic: [
                 { "name": "Sets and Their Representation" },
                 { "name": "Union, Intersection, and Complement of Sets and Their Algebraic Properties" },
@@ -655,6 +684,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopics:
               [
                 { "name": "Complex Numbers as Ordered Pairs of Reals" },
@@ -673,6 +703,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Matrices: Algebra of Matrices" },
@@ -692,6 +723,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
               subtopics:
               [
                 { "name": "The Fundamental Principle of Counting" },
@@ -709,6 +741,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopic: [
                 { "name": "Matter and Its Nature" },
                 { "name": "Daltons Atomic Theory" },
@@ -732,6 +765,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Classification of Matter into Solid, Liquid, and Gaseous States" },
@@ -764,6 +798,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Thomson and Rutherford Atomic Models and Their Limitations" },
@@ -794,6 +829,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Kossel  Lewis Approach to Chemical Bond Formation" },
@@ -830,6 +866,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopic: [
                   { "name": "Electric Charges: Conservation of Charge" },
                   { "name": "Coulombs Law - Forces Between Two Point Charges" },
@@ -863,6 +900,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopics:
                   [
                     { "name": "Electric Current" },
@@ -890,6 +928,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Biot  Savart Law and Its Application to Current Carrying Circular Loop" },
@@ -917,6 +956,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Electromagnetic Induction: Faradays Law" },
@@ -942,6 +982,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                   subtopic:[
                     { "name": "Types of Relations: Reflexive, Symmetric, Transitive, and Equivalence" },
                     { "name": "Functions: One-One, Onto, and Inverse" },
@@ -953,6 +994,7 @@ async function assignExamSyllabus(studentId) {
                   weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
               subtopics:
               [
                 { "name": "Domains and Ranges of Inverse Trigonometric Functions" },
@@ -966,6 +1008,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],
+              No_of_Q:[],
            subtopics:
            [
             { "name": "Types of Matrices (Square, Diagonal, Symmetric, Skew-Symmetric, Identity)" },
@@ -981,6 +1024,7 @@ async function assignExamSyllabus(studentId) {
           weakpoints:[],
           coveredpoints:[],
           youtubeURL:[],
+          No_of_Q:[],
       subtopics:
       [
         { "name": "Continuity of a Function at a Point and in an Interval" },
@@ -1000,6 +1044,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                   coveredpoints:[],
                   youtubeURL:[],
+                  No_of_Q:[],
                 subtopic:[
                 { "name": "Different Methods for Expressing the Concentration of a Solution: Molality, Molarity, Mole Fraction, Percentage (by Volume and Mass Both)" },
                 { "name": "Vapour Pressure of Solutions and Raoult’s Law" },
@@ -1013,7 +1058,9 @@ async function assignExamSyllabus(studentId) {
 
               {name: "General Principles and Processes of Isolation of Elements", completed: false,weakpoints:[],
                 coveredpoints:[],
-                youtubeURL:[], subtopics:
+                youtubeURL:[],
+                No_of_Q:[],
+                subtopics:
                 [
                   { "name": "Modes of Occurrence of Elements in Nature: Minerals and Ores" },
                   { "name": "Steps Involved in the Extraction of Metals: Concentration, Reduction (Chemical and Electrolytic Methods), and Refining" },
@@ -1026,6 +1073,7 @@ async function assignExamSyllabus(studentId) {
                 weakpoints:[],
                 coveredpoints:[],
                 youtubeURL:[],
+                No_of_Q:[],
                 subtopics:
                 [
                   { "name": "Group 13 to Group 18 Elements: General Introduction, Electronic Configuration, and General Trends in Physical and Chemical Properties" },
@@ -1054,6 +1102,7 @@ async function assignExamSyllabus(studentId) {
               weakpoints:[],
               coveredpoints:[],
               youtubeURL:[],  
+              No_of_Q:[],
               subtopics:
               [
                 { "name": "Transition Elements: General Introduction, Electronic Configuration, Occurrence, and Characteristics" },
