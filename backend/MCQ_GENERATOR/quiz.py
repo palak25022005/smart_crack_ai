@@ -19,7 +19,7 @@ def get_num_questions(student_id):
     client = MongoClient(os.getenv("MONGO_URI"))
     db = client['test']
     student = db['students'].find_one({"studentId": ObjectId(student_id)})
-    return student.get("num_questions", 10)
+    return student.get("num_questions", 30)
 
 def get_incomplete_topics(student_id, exam_type):
     client = MongoClient(os.getenv("MONGO_URI"))
