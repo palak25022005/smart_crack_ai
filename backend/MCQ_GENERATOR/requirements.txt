@@ -3,25 +3,31 @@
 # OpenAI package for AI-related functionalities
 openai
 
-# Langchain for blockchain-based language applications
-langchain
-
-# Streamlit for building interactive web apps with Python
-streamlit
-
 # python-dotenv for managing environment variables from a .env file
 python-dotenv
 
-# PyPDF2 for PDF manipulation in Python
-PyPDF2
+# to fetch youtube transcripts from youtube urls
+youtube-transcript-api
 
-langchain_community
-langchain-openai
+# requests for making HTTP requests to MongoDB API
+pymongo
 
-# To install the local package in the environment,
-# you can either use 'python setup.py install'
-# or just add '-e .' to install in editable mode. 
--e .
+# for ObjectId in MongoDB
+bson
+
+# # Langchain for blockchain-based language applications
+# langchain
+
+# # Streamlit for building interactive web apps with Python
+# streamlit
+
+# langchain_community
+# langchain-openai
+
+# # To install the local package in the environment,
+# # you can either use 'python setup.py install'
+# # or just add '-e .' to install in editable mode. 
+# # -e .
 
 
-# installing the requirements.txt generates a 'mcq_generator.egg-info' with info regarding the installed stuff in the enviorment
+# # installing the requirements.txt generates a 'mcq_generator.egg-info' with info regarding the installed stuff in the enviorment
