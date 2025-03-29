@@ -36,6 +36,9 @@ const mathChapters = [
       { subtopic_id: "M1.7", name: "Functions", is_weak: false },
       { subtopic_id: "M1.8", name: "One-One, Into, and Onto Functions", is_weak: false },
       { subtopic_id: "M1.9", name: "Composition of Functions", is_weak: false }
+    ],
+    youtube_urls: [
+      
     ]
   },
   {
@@ -53,6 +56,9 @@ const mathChapters = [
       { subtopic_id: "M2.8", name: "Relation Between Roots and Coefficients", is_weak: false },
       { subtopic_id: "M2.9", name: "Nature of Roots", is_weak: false },
       { subtopic_id: "M2.10", name: "Formation of Quadratic Equations with Given Roots", is_weak: false }
+    ],
+    youtube_urls: [
+      
     ]
   }
 ];
