@@ -163,6 +163,9 @@ const TextToAudioPage = () => {
         .text-audio-box {
           background: white;
           color: black;
+          align: center;
+          margin-left: 400px;
+          margin-top: 100px;
           padding: 20px;
           border-radius: 15px;
           width: 600px;
