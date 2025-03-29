@@ -12,12 +12,7 @@ name:{
     type:String,
     required:true
 },
-studentClass:{
-    type:Number,
-    required:true
-},
 
-exam: { type: String, enum: ["JEE", "NEET"], required: true },
 });
 
 // Hash password before saving
