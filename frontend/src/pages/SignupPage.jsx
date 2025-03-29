@@ -9,8 +9,7 @@ const SignupPage = () => {
     email: "",
     password: "",
     name: "",
-    exam: "",
-    studentClass: "",
+   
   });
   const [error, setError] = useState("");
 
@@ -114,16 +113,8 @@ const SignupPage = () => {
             required
             style={inputStyle}
           />
-          <select name="exam" value={formData.exam} onChange={handleChange} required style={inputStyle}>
-            <option value="">Select Exam</option>
-            <option value="JEE">JEE</option>
-            <option value="NEET">NEET</option>
-          </select>
-          <select name="studentClass" value={formData.studentClass} onChange={handleChange} required style={inputStyle}>
-            <option value="">Select Grade</option>
-            <option value="11">11th</option>
-            <option value="12">12th</option>
-          </select>
+          
+          
           <button
             type="submit"
             style={buttonStyle}
