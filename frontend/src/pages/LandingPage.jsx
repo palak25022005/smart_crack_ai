@@ -141,12 +141,17 @@ const LandingPage = () => {
             width: 40px;
             margin-right: 10px;
           }
+          .robot{
+           width: 140px;
+           padding-left:600px;
+           margin-top: -70px;
+          }
         `}
       </style>
 
       {/* Main Content */}
       
-        <h1 className="title"> Welcome to Smart Crack AI</h1>
+        <h1 className="title"> Welcome to SmartCrack AI</h1>
         <p className="subtitle">
           AI-powered EdTech for personalized learning—instant doubt solving, adaptive quizzes, and smart progress tracking.
         </p>
@@ -155,15 +160,16 @@ const LandingPage = () => {
         <div className="cards">
           <div className="card">
             <h2>💡 Idea</h2>
-            <p>AI-driven learning for customized education.</p>
+            <p>SmartCrack AI is your ultimate learning companion, blending AI-powered tutoring, adaptive quizzes, and smart summarization to make studying efficient and engaging. Master concepts, test your knowledge, and get AI-driven insights—all in one place!</p>
           </div>
           <div className="card">
             <h2>🚨 Problem</h2>
-            <p>Traditional learning is rigid and non-adaptive.</p>
+            <p> SmartCrack AI personalizes learning with AI-driven tutoring, adaptive quizzes, and smart summarization, making studying efficient and tailored to each students needs</p>
           </div>
           <div className="card">
             <h2>🔍 Solution</h2>
-            <p>AI analyzes your learning and adapts accordingly.</p>
+            <p>Our website uses AI to assess your learning patterns, provide personalized tutoring, generate adaptive quizzes, and summarize key concepts for efficient studying.
+</p>
           </div>
         </div>
 
@@ -171,6 +177,10 @@ const LandingPage = () => {
         <div className="buttons">
           <button className="button button-login" onClick={() => navigate("/LoginPage")}>Login</button>
           <button className="button button-signup" onClick={() => navigate("/SignupPage")}>Sign Up</button>
+        </div>
+
+        <div>
+          <img className="robot" src="/Robot.png"/>
         </div>
 
         
