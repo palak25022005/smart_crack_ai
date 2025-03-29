@@ -62,12 +62,27 @@ def extract_transcripts(video_urls):
             print(f"Transcript not available for {url}")
     return transcripts, valid_urls
 
-def generate_mcqs(transcript_text, num_questions):
+def retrieve_relevant_knowledge(query):
+    """Fetch external knowledge using OpenAI RAG capabilities."""
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": "You are an AI assistant that retrieves relevant information."},
+                {"role": "user", "content": f"Retrieve relevant knowledge about: {query}"}
+            ]
+        )
+        return response['choices'][0]['message']['content']
+    except Exception as e:
+        print(f"Error retrieving knowledge: {e}")
+        return ""
+
+def generate_mcqs(transcript_text, retrieved_knowledge, num_questions):
     prompt = (
-        "Generate multiple-choice questions (MCQs) from the given transcript. "
+        "Generate multiple-choice questions (MCQs) from the given transcript and additional knowledge. "
         "Maintain a difficulty ratio of 60% easy, 30% medium, 10% hard. "
         "Provide output in structured JSON format: list of dictionaries with 'question', 'options', and 'answer'. "
-        "Transcript:\n\n" + transcript_text
+        f"\n\nTranscript:\n{transcript_text}\n\nAdditional Knowledge:\n{retrieved_knowledge}"
     )
     try:
         response = openai.ChatCompletion.create(
@@ -119,6 +134,8 @@ def main(subject):
     all_mcqs = []
     for chapter in selected_chapters:
         subtopics = [subtopic["name"] for subtopic in chapter.get("subtopics", [])]
+        retrieved_knowledge = retrieve_relevant_knowledge(", ".join(subtopics))
+        
         if not chapter.get("youtube_urls"):
             chapter["youtube_urls"] = fetch_youtube_urls(subtopics)
         
@@ -128,7 +145,7 @@ def main(subject):
             continue
         
         num_questions = chapter.get("num_questions", 30)
-        mcqs = generate_mcqs(transcripts, num_questions)
+        mcqs = generate_mcqs(transcripts, retrieved_knowledge, num_questions)
         formatted_mcqs = format_mcqs(mcqs, chapter["_id"], chapter["subtopics"][0]["_id"], subject)
         all_mcqs.extend(formatted_mcqs)
     

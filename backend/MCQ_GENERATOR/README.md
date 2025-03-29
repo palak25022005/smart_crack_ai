@@ -11,9 +11,7 @@ MCQ Generator with Streamlit is a web application that allows users to upload PD
 
 ## Prerequisites
 
-- Python 3.x
-- Streamlit library
-- Langchain library
+- Python 3.12.9 version (stable one)
 - OpenAI API Key
 
 ## Installation
