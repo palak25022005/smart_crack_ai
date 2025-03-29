@@ -79,10 +79,16 @@ def retrieve_relevant_knowledge(query):
 
 def generate_mcqs(transcript_text, retrieved_knowledge, num_questions):
     prompt = (
-        "Generate multiple-choice questions (MCQs) from the given transcript and additional knowledge. "
-        "Maintain a difficulty ratio of 60% easy, 30% medium, 10% hard. "
-        "Provide output in structured JSON format: list of dictionaries with 'question', 'options', and 'answer'. "
+        """
+        Generate multiple-choice questions (MCQs) from the provided transcript. 
+        Adhere to a difficulty distribution: 60% easy, 30% medium, and 10% hard.
+        Output the MCQs in a structured JSON format, where each question is represented as a dictionary with the following keys:
+        - 'question': The MCQ question text.
+        - 'options': A list of four possible answer options.
+        - 'correct_option': The index (1-based) of the correct answer within the 'options' list.
+        - 'explanation': A concise explanation of why the 'correct_option' is the right answer.
         f"\n\nTranscript:\n{transcript_text}\n\nAdditional Knowledge:\n{retrieved_knowledge}"
+        """
     )
     try:
         response = openai.ChatCompletion.create(
