@@ -165,7 +165,7 @@ const QuizSelectionPage = () => {
         </div>
       </div>
 
-      <button className="attempt-quiz-button">Attempt Quiz</button>
+      <button className="attempt-quiz-button" onClick={() => navigate("/QuizAttemptPage")}>Attempt Quiz</button>
     </div>
   );
 };
