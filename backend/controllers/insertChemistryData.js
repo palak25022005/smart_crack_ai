@@ -42,6 +42,9 @@ const chemistryChapters = [
       { subtopic_id: "C1.13", name: "Percentage Composition", is_weak: false },
       { subtopic_id: "C1.14", name: "Empirical and Molecular Formulae", is_weak: false },
       { subtopic_id: "C1.15", name: "Chemical Equations and Stoichiometry", is_weak: false }
+    ],
+    youtube_urls: [
+      
     ]
   },
   {
@@ -63,6 +66,9 @@ const chemistryChapters = [
       { subtopic_id: "C2.12", name: "Critical Constants", is_weak: false },
       { subtopic_id: "C2.13", name: "Liquid State: Properties of Liquids – Vapour Pressure, Viscosity, and Surface Tension", is_weak: false },
       { subtopic_id: "C2.14", name: "Effect of Temperature on Liquid Properties (Qualitative Treatment)", is_weak: false }
+    ],
+    youtube_urls: [
+      
     ]
   }
 ];

@@ -35,6 +35,9 @@ const physicsChapters = [
       { subtopic_id: "P1.6", name: "Errors in Measurement", is_weak: false },
       { subtopic_id: "P1.7", name: "Dimensions of Physical Quantities", is_weak: false },
       { subtopic_id: "P1.8", name: "Dimensional Analysis and Its Applications", is_weak: false }
+    ],
+    youtube_urls: [
+      
     ]
   },
   {
@@ -62,6 +65,9 @@ const physicsChapters = [
       { subtopic_id: "P2.18", name: "Motion in a Plane", is_weak: false },
       { subtopic_id: "P2.19", name: "Projectile Motion", is_weak: false },
       { subtopic_id: "P2.20", name: "Uniform Circular Motion", is_weak: false }
+    ],
+    youtube_urls: [
+      
     ]
   }
   // Add more chapters following the same pattern

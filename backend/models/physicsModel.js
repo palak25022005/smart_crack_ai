@@ -13,6 +13,7 @@ const chapterSchema = new mongoose.Schema({
   name: { type: String, required: true },
   completed: { type: Boolean, default: false }, // Track if the chapter is completed
   subtopics: [subtopicSchema], // List of subtopics
+  youtube_urls: [{ type: String }]
 });
 
 const Physics = mongoose.model("Physics", chapterSchema);
