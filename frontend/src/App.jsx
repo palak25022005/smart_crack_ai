@@ -19,6 +19,7 @@ import SignupPage from './pages/SignupPage'
 import TextToAudioPage from './pages/TextToAudioPage'
 import VideoRecommendationPage from './pages/videoRecommendationPage'
 import WeakPoints from './pages/weakPoints'
+import StressBuster from './pages/StressBuster'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -49,6 +50,7 @@ function App() {
 
         <Route path="/AITutor" element={<AITutor/>}/>
         <Route path="/LandingPage" element={<LandingPage/>}/>
+        <Route path="/DashBoardPage" element={<DashboardPage/>}/>
         <Route path="/LearnPage" element={<LearnPage/>}/>
         <Route path="/LoginPage" element={<LoginPage/>}/>
         <Route path="/MCQs" element={<MCQs/>}/>
@@ -60,6 +62,7 @@ function App() {
         <Route path="/TextToAudioPage" element={<TextToAudioPage/>}/>
         <Route path="/videoRecommendationPage" element={<VideoRecommendationPage/>}/>
         <Route path="/weakPoints" element={<WeakPoints/>}/>
+        <Route path="/StressBuster" element={<StressBuster/>}/>
       </Routes>
     </div>
   )

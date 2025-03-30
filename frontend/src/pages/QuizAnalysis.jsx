@@ -102,6 +102,8 @@ const QuizAnalysis = () => {
           <button className="nav-button active" onClick={() => navigate("/LearnPage")}>Learn</button>
           <button className="nav-button" onClick={() => navigate("/AITutor")}>AiTutor</button>
           <button className="nav-button" onClick={() => navigate("/QuizSelectionPage")}>AiQuiz</button>
+          <button className="nav-button active" onClick={() => navigate("/StressBuster")}>StressBuster</button>
+ 
           <button className="nav-button" onClick={() => navigate("/Settings")}>Settings</button>
         </div>
 

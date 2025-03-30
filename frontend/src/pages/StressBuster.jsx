@@ -1,40 +1,37 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AITutor = () => {
-  const [question, setQuestion] = useState("");
+const StressBuster = () => {
+  const [stressReason, setStressReason] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleAsk = async () => {
-    if (!question.trim()) return;
+    if (!stressReason.trim()) return;
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/chatbot", {
+      const res = await fetch("http://localhost:8010/api/stress-buster", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: question }),
+        body: JSON.stringify({ stress_reason: stressReason }),
       });
 
       const data = await res.json();
-      const newEntry = {
-        question,
-        answer: data.response?.result || "No response received.",
-      };
+      const newEntry = { question: stressReason, answer: data.response };
 
       setChatHistory((prev) => [...prev, newEntry]);
     } catch (error) {
-      console.error("Error fetching chatbot response:", error);
+      console.error("Error fetching stress relief response:", error);
       setChatHistory((prev) => [
         ...prev,
-        { question, answer: "Failed to get response." },
+        { question: stressReason, answer: "Failed to get response." },
       ]);
     }
 
     setLoading(false);
-    setQuestion("");
+    setStressReason("");
   };
 
   return (
@@ -42,7 +39,7 @@ const AITutor = () => {
       <style>{`
         body, html {
           height: 100%;
-          background: linear-gradient(to bottom,rgb(101, 38, 148),  rgb(33, 4, 54));
+          background: linear-gradient(to bottom, rgb(101, 38, 148), rgb(33, 4, 54));
           margin: 0;
           font-family: Arial, sans-serif; 
           color: white;
@@ -77,7 +74,7 @@ const AITutor = () => {
           background: #2e005b;
           box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
         }
-        .ai-tutor-title {
+        .stress-buster-title {
           font-size: 28px;
           font-weight: bold;
           margin-top: 80px;
@@ -127,24 +124,31 @@ const AITutor = () => {
           background: none;
           border: none;
           cursor: pointer;
+          color: #4b0082;
+          font-size: 18px;
+          font-weight: bold;
+          padding: 10px 15px;
+          border-radius: 10px;
+          transition: background 0.3s;
         }
-        .send-icon {
-          width: 24px;
-          height: 24px;
+        .send-button:hover {
+          background: #e5e5e5;
         }
       `}</style>
 
+      {/* Navbar */}
       <div className="navbar">
         <button className="nav-button">SmartCrack AI</button>
         <button className="nav-button" onClick={() => navigate("/")}>Dashboard</button>
         <button className="nav-button" onClick={() => navigate("/LearnPage")}>Learn</button>
-        <button className="nav-button active">AiTutor</button>
+        <button className="nav-button" onClick={() => navigate("/AITutor")}>AiTutor</button>
         <button className="nav-button" onClick={() => navigate("/QuizSelectionPage")}>AiQuiz</button>
-        <button className="nav-button active" onClick={() => navigate("/StressBuster")}>StressBuster</button>
+        <button className="nav-button active">StressBuster</button>
         <button className="nav-button" onClick={() => navigate("/Settings")}>Settings</button>
       </div>
 
-      <h1 className="ai-tutor-title">AI Tutor</h1>
+      {/* Stress Buster Section */}
+      <h1 className="stress-buster-title">Stress Buster</h1>
       <div className="chat-container">
         <div className="chat-box">
           {chatHistory.length === 0 ? (
@@ -152,8 +156,8 @@ const AITutor = () => {
           ) : (
             chatHistory.map((entry, index) => (
               <div key={index}>
-                <p className="text-blue-600">Question: {entry.question}</p>
-                <p>Answer: {entry.answer}</p>
+                <p className="text-blue-600">You: {entry.question}</p>
+                <p>Stress Relief Tip: {entry.answer}</p>
               </div>
             ))
           )}
@@ -161,9 +165,9 @@ const AITutor = () => {
         <div className="input-container">
           <input
             type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Enter Doubt"
+            value={stressReason}
+            onChange={(e) => setStressReason(e.target.value)}
+            placeholder="What is stressing you out?"
             className="input-box"
           />
           <button className="send-button" onClick={handleAsk} disabled={loading}>
@@ -175,5 +179,4 @@ const AITutor = () => {
   );
 };
 
-export default AITutor;
-
+export default StressBuster;
