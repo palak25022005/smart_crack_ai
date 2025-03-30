@@ -3,6 +3,9 @@
 # OpenAI package for AI-related functionalities
 openai
 
+# Google Generative AI for generative AI functionalities
+google-generativeai
+
 # python-dotenv for managing environment variables from a .env file
 python-dotenv
 
