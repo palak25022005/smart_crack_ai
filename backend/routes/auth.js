@@ -29,6 +29,7 @@ router.post("/register", async (req, res) => {
 });
 
 // LOGIN
+/*
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -55,6 +56,43 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+*/
+
+// LOGIN
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Check if the user exists
+    const user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ message: "User not found" });
+
+    // Compare the provided password with the stored hashed password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+
+    // Generate a JWT token for authentication
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+
+    // Set a cookie with the JWT token (httpOnly to prevent XSS attacks)
+    res.cookie("token", token, { httpOnly: true, secure: true, sameSite: "strict" });
+
+    // Update firstVisit to false since the user has logged in
+    await User.findByIdAndUpdate(user._id, { firstVisit: false });
+
+    // Send student_id in the response
+    res.status(200).json({
+      message: "Login successful",
+      token,
+      student_id: user._id,  // <-- Include student_id here
+      firstVisit: user.firstVisit
+    });
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 // CHECK LOGIN STATUS route
 router.get("/me", async (req, res) => {

@@ -143,6 +143,10 @@ const Notes = () => {
           ))}
         </div>
       </div>
+      <button className="robo-button" onClick={() => navigate("/")}>
+      
+          <img className="robot" src="/Robot.png"/>
+        </button>
       {selectionText && (
         <button className="highlight-button" onClick={applyHighlight}>
           Highlight Selection
@@ -188,6 +192,13 @@ const Notes = () => {
           background: linear-gradient(rgb(23, 4, 27), #4b0082);
           margin: 0;
           font-family: Arial, sans-serif;
+        }
+
+        .robot{
+         padding-left:500px;
+         margin-top: -50px;
+         height: 150px;
+         width: 140px;
         }
 
          .navbar {
@@ -239,13 +250,13 @@ const Notes = () => {
 
         #note-here {
           margin: 20px auto;
-          width: 700px;
+          width: 600px;
           max-height: 400px;
           border-radius: 10px;
           background: rgba(123, 120, 120, 0.2);
           padding: 20px;
           overflow-y: auto;
-          text-align: left;
+          
         }
 
         #Notes p {
@@ -283,7 +294,10 @@ const Notes = () => {
           left: 0;
           top: 0;
         }
-
+        .robo-button{
+          width: 100px;
+          
+        }
         .sidebar h2 {
           text-align: center;
         }

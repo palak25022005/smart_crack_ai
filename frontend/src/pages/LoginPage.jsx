@@ -8,7 +8,7 @@ const LoginPage = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Use navigate for redirection
 
-  const handleLogin = async (e) => {
+ /* const handleLogin = async (e) => {
     e.preventDefault();
     setError(""); // Clear previous errors
 
@@ -34,6 +34,45 @@ const LoginPage = () => {
       setError(err.message);
     }
   };
+*/
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setError(""); // Clear previous errors
+
+  try {
+    const response = await fetch("http://localhost:5000/api/auth/login", {  
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+    console.log("Login Response:", data); // Debug: Check if student_id exists
+
+    if (!response.ok) {
+      throw new Error(data.message || "Login failed");
+    }
+
+    if (!data.student_id) {
+      throw new Error("Student ID is missing in response!"); // Error if student_id is undefined
+    }
+
+    // Store student ID
+    localStorage.setItem("student_id", data.student_id);  
+    console.log("Stored Student ID:", localStorage.getItem("student_id"));
+
+    alert("Login successful!");
+    navigate("/"); 
+  } catch (err) {
+    setError(err.message);
+  }
+};
+
+
 
   return (
     <div

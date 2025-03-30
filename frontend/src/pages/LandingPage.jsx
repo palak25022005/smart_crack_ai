@@ -142,9 +142,9 @@ const LandingPage = () => {
             margin-right: 10px;
           }
           .robot{
-           width: 140px;
+           width: 120px;
            padding-left:600px;
-           margin-top: -70px;
+           margin-top: -7px;
           }
         `}
       </style>

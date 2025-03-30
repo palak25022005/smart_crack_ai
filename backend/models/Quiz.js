@@ -22,6 +22,11 @@ const quizSchema = new mongoose.Schema({
   student_id: { type: mongoose.Schema.Types.ObjectId, ref: "Student", required: true },
   quiz_id: { type: String, required: true, unique: true }, // Unique quiz identifier
   num_questions: { type: Number, required: true },
+  difficulty_level: { 
+    type: String, 
+    enum: ["Easy", "Medium", "Hard"], 
+    default: "Easy" 
+  },
   questions: [questionSchema], // Store all selected questions
   created_at: { type: Date, default: Date.now } // Timestamp
 });
